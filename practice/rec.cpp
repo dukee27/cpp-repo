@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <algorithm>
 using namespace std;
 
 int main(){
@@ -8,43 +8,40 @@ int main(){
     for(int i {} ; i < t ; i++){
         int n {};
         int m {};
-        cin >> n >> m;
-        int arr[n][m];
-        for(int j {} ;  j < n ; j++){
-            for(int k {}; k < m ; k++){
-                cin >> arr[j][k];
-            }
+        cin >> n; 
+        cin >> m;
+        string s {};
+        cin >> s;
+        int arr[m];
+        for (int j {}; j < m ; j++){
+            cin >> arr[j];
         }
-        for(int j {} ;  j < n ; j++){
-            for(int k {}; k < m ; k++){
-                
-                int b = {0};
-                int c = {0};
-                int d = {0};
-                int e = {0};
-                if(j-1 >= 0){
-                    b = arr[j-1][k];
-                }
-                if(j+1 < n){
-                    d = arr[j+1][k];
-                }
-                if(k-1 >= 0){
-                    c = arr[j][k-1];
-                }
-                if(k+1 < m){
-                    e = arr[j][k+1];
-                }
+        string u = {};
+        cin >> u;
+        
+        sort(arr , arr + m);
+        sort(u.begin() , u.end());
 
-                int a = arr[j][k];
-
-                if((a > b)&& (a > c) && (a > d) && (a > e)){
-                    arr[j][k] = max(b , max(c , max(d,e)));
-                }
-                cout << arr[j][k] << " ";
-                
-            }
-            cout << "\n";
+        int arr1[m];
+        
+        int index = 0;
+        
+        arr1[index++] = arr[0]; 
+        for (int j = 1; j < m; j++) {
+        if (arr[j] != arr[j - 1]) { 
+        arr1[index++] = arr[j];
+    }
+}
+        int arr2[index];
+        for (int j {}; j < index ; j++){
+            arr2[j] = arr1[j];
         }
+
+        for (int j {}; j < index ; j++){
+            int temp = arr2[j];
+            s[temp-1] = u[j];
+        }
+        cout << s << "\n";
     }
     return 0;
 }
