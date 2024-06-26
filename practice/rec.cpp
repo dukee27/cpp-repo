@@ -1,47 +1,19 @@
 #include <iostream>
-#include <algorithm>
+
 using namespace std;
 
 int main(){
-    int t {};
-    cin >> t;
-    for(int i {} ; i < t ; i++){
-        int n {};
-        int m {};
-        cin >> n; 
-        cin >> m;
-        string s {};
-        cin >> s;
-        int arr[m];
-        for (int j {}; j < m ; j++){
-            cin >> arr[j];
-        }
-        string u = {};
-        cin >> u;
-        
-        sort(arr , arr + m);
-        sort(u.begin() , u.end());
+    int prime {31};
+    int n {};
+    int temp {};
 
-        int arr1[m];
-        
-        int index = 0;
-        
-        arr1[index++] = arr[0]; 
-        for (int j = 1; j < m; j++) {
-        if (arr[j] != arr[j - 1]) { 
-        arr1[index++] = arr[j];
+    if(temp%2 != 0 && temp%5 != 0 && temp%7 != 0 && temp%3 != 0 ){
+        n = temp;
     }
-}
-        int arr2[index];
-        for (int j {}; j < index ; j++){
-            arr2[j] = arr1[j];
-        }
+    if(prime%2 != 0 && prime%5 != 0 && prime%7 != 0 && prime%3 != 0 && prime%n != 0){
+        cout << "prime";
+    }
 
-        for (int j {}; j < index ; j++){
-            int temp = arr2[j];
-            s[temp-1] = u[j];
-        }
-        cout << s << "\n";
-    }
+
     return 0;
 }
