@@ -153,6 +153,49 @@ void reverse(struct Node *p,int n){
     }
 
 }
+void sReverse(struct Node *p){
+    struct Node *q,*r;
+    p = first;
+    q = NULL;
+    r = NULL;
+    while(p){
+        r = q;
+        q = p;
+        p= p->next;
+        q->next = q;
+    }
+    first = q;
+}
+
+void merge(struct Node *p , struct Node *q){
+    struct Node *last;
+
+    if(p->data < q->data ){
+        last = p;
+        p=p->next;
+        last->next = NULL;
+    }
+    if(p->data > q->data ){
+        last = q;
+        q=q->next;
+        last->next = NULL;
+    }
+
+    while(p && q){
+        if(p->data < q ->data){
+            last->next = p;
+            last = p;
+            p = p->next;
+            last->next = NULL;
+        }
+        else{
+            last->next = q;
+            last = q;
+            q = q->next;
+            last->next = NULL;
+        }
+    }
+}
 
 int main() {
     int A[5] = {1, 3, 5, 7, 9};
@@ -162,7 +205,7 @@ int main() {
     Delete(2);
     display(first);
     cout << isSort(first) << "\n";
-    reverse(first,5);
+    sReverse(first);
     display(first);
     // insert(6, 3);  // Insert 6 at index 3
     // display(first);
