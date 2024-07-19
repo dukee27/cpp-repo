@@ -16,7 +16,7 @@ int main(){
         vector<char> v;
 
         for(int j{} ; j < n ; j++){
-            if(s[j] != s[j+1]){
+            if(s[j] != s[j+1] || s[j] == '1'){
                 v.push_back(s[j]);
             }
         }
@@ -33,6 +33,12 @@ int main(){
             }
             
         }
+        for(int j{} ; j < v.size() ;j++){
+           
+            cout << v[j] << " " ;
+            
+        }
+
         
         
         if(co > cz){
