@@ -33,14 +33,7 @@ int main(){
             }
             
         }
-        for(int j{} ; j < v.size() ;j++){
-           
-            cout << v[j] << " " ;
-            
-        }
 
-        
-        
         if(co > cz){
             cout << "yes" << "\n";
         }

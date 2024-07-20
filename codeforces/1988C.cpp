@@ -24,7 +24,7 @@ int main(){
                     break;  
                     }              
                 }
-            }
+            } 
             }
         }
         for(int i {} ; i < v.size() ; i++){
