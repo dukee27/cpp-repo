@@ -13,7 +13,6 @@ int main(){
     }
     arr[n] = INT_MIN ;
     int count {0};
-    int m{0};
 
     vector<int> vect ;
     
@@ -37,7 +36,6 @@ int main(){
                 v.clear();
             }
         }
-    
     cout << count << "\n";
     cout << "longest sub-array: ";
     for(int i{}; i < vect.size() ; i++){

@@ -14,7 +14,7 @@ int main() {
       vector<char> v;
       int n {};
       while(s[i] != '#'){
-            if(s[i] == s[i+1]){
+            if(s[i] == s[i+1] &&  n == 0){
                 v.push_back(s[i]);
                 if(s[i] == 'a'){
                 v.push_back('b');
@@ -29,7 +29,7 @@ int main() {
             }
             i++;
       }
-      
+       
       if(n){
       for(int i {} ; i < v.size() ; i++){
         cout << v[i] ;
